@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Website Accessibility Tester</title>
+    <style>
+        .loader, .hideButton  {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container max-w-screen-xl mx-auto spaxe-y-8">
+        <div class="p-6 max-w-md mx-auto rounded-lg shadow-lg my-5 p-3 bg-gray-900 text-gray-200 space-y-4">
+            <div>
+                <h1 class="text-2xl font-bold text-center">Website Accessibility Tester</h1>
+                <p class="text-center">
+                    This tool will help you test the accessibility of your website.
+                </p>
+            </div>
+            <form id="form">
+                <div class="flex  items-center">
+                    <label for="url" class="text-sm font-semibold hidden">URL</label>
+                    <input type="url" aria-label="url input" id="url" class="w-full p-2 border border-gray-300 rounded-l-lg" name="url" placeholder="https://example.com">
+                    <button type="submit" aria-label="submit-button" class="bg-blue-500 p-2 text-lg font-semibold rounded-r-lg">Submit</button>
+                </div>
+            </form>
+            <div class="grid grid-cols-2 gap-2">
+                <button id="clearResults" class="bg-red-500 p-2 text-lg font-semibold rounded-lg">Clear Results</button>
+                 <button id="csvBtn" class="bg-orange-500 p-2 text-lg font-semibold rounded-lg hideButton">Download Csv</button>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="flex h-full w-full flex-col items-center justify-center" role="status">
+                <div class="m-5 animate-spin w-20 h-20 rounded-full border-b-4 border-[#00BFFF] p-4" />
+                <span class="px-2 text-center text-lg hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <div id="number"></div>
+    <div id="issues" class="container max-w-screen-xl mx-auto"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
